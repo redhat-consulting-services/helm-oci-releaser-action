@@ -55,7 +55,7 @@ jobs:
           docker-compose up -d
 
       - name: Release Chart
-        uses: urbanmedia/helm-chart-releaser-action@main
+        uses: redhat-consulting-services/helm-oci-releaser-action@main
         id: release_chart
         env:
           DEBUG: true
