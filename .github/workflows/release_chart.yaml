@@ -52,7 +52,7 @@ jobs:
       - name: Start local registry
         working-directory: _tests
         run: |
-          docker-compose up -d
+          docker compose up -d
 
       - name: Release Chart
         uses: redhat-consulting-services/helm-oci-releaser-action@main
@@ -76,7 +76,7 @@ jobs:
       - name: Stop local registry
         working-directory: _tests
         run: |
-          docker-compose down --rmi local
+          docker compose down --rmi local
 
       - name: Comment PR
         if: failure() && github.event.issue.pull_request && contains(github.event.comment.body, '/test')

@@ -53,10 +53,10 @@ jobs:
         with:
           fetch-depth: 0
       - name: Run chart-releaser
-        uses: k8scope/helm-chart-releaser-action@v1.0.0
+        uses: redhat-consulting-services/helm-chart-releaser-action@v1.0.0
         with:
           gh_token: ${{ secrets.GITHUB_TOKEN }}
-          chart_repository_url: oci://ghcr.io/k8scope/helm-charts
+          chart_repository_url: oci://ghcr.io/redhat-consulting-services/helm-charts
           chart_repository_username: ${{ secrets.GHCR_USERNAME }}
           chart_repository_password: ${{ secrets.GHCR_PASSWORD }}
 ```
@@ -74,7 +74,7 @@ In order to run the tests locally, you need to have [docker](https://www.docker.
 
 ```bash
 cd _tests
-docker-compose up -d
+docker compose up -d
 ```
 
 **Run the tests:**
