@@ -35,6 +35,10 @@ inputs:
       The password to use when authenticating to the chart repository.
       This is used to configure the Helm push plugin.
     required: true
+  helm_version:
+    description: 'The version of Helm to use.'
+    required: false
+    default: "latest"
 branding:
   icon: 'terminal'
   color: 'blue'
@@ -52,7 +56,9 @@ runs:
         git config user.email "${{ inputs.github_actor }}@users.noreply.github.com"
 
     - name: Install Helm
-      uses: azure/setup-helm@v3
+      uses: azure/setup-helm@v4
+      with:
+        version: ${{ inputs.helm_version }}
 
     - name: Login to Helm registry
       shell: bash
