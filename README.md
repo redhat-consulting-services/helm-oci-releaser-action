@@ -53,7 +53,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Run chart-releaser
-        uses: redhat-consulting-services/helm-oci-releaser-action@v1.1.0
+        uses: redhat-consulting-services/helm-oci-releaser-action@v1.2.0
         with:
           gh_token: ${{ secrets.GITHUB_TOKEN }}
           chart_repository_url: oci://ghcr.io/redhat-consulting-services/helm-charts
